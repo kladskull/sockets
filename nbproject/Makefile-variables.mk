@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=proxy
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/proxy
+CND_ARTIFACT_NAME_Debug=sockets
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/sockets
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=proxy.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/proxy.tar
+CND_PACKAGE_NAME_Debug=sockets.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/sockets.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
-CND_ARTIFACT_NAME_Release=proxy
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/proxy
+CND_ARTIFACT_NAME_Release=sockets
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/sockets
 CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
-CND_PACKAGE_NAME_Release=proxy.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/proxy.tar
+CND_PACKAGE_NAME_Release=sockets.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/sockets.tar
 #
 # include compiler specific variables
 #
