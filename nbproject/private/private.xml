@@ -7,9 +7,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/mike/Dropbox/Mike%20Dev/Proxy/main.cpp</file>
-            <file>file:/Users/mike/Dropbox/Mike%20Dev/Proxy/sockets.cpp</file>
-            <file>file:/Users/mike/Dropbox/Mike%20Dev/Proxy/sockets.h</file>
+            <file>file:/Users/michael/Dropbox/Mike%20Dev/sockets/sockets.h</file>
+            <file>file:/Users/michael/Dropbox/Mike%20Dev/sockets/Logger.h</file>
+            <file>file:/Users/michael/Dropbox/Mike%20Dev/sockets/main.cpp</file>
         </group>
     </open-files>
 </project-private>
