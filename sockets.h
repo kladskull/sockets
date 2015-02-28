@@ -12,17 +12,8 @@
 
 #include <iostream>
 #include <sstream>
-
-//#include <sys/types.h>
-//#include <sys/socket.h>
-
 #include <unistd.h>
-
-//#include <fcntl.h>
-//#include <string.h>
-//#include <netinet/in.h>
 #include <netdb.h>
-//#include <arpa/inet.h>
 #include <sys/wait.h>
 #include <signal.h>
 

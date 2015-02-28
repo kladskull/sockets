@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 
+#include "Logger.h"
 #include "sockets.h"
 
 #define PORT "8080"     // the port users will be connecting to
