@@ -25,17 +25,6 @@ int main() {
     struct sockaddr_storage their_addr; // connector's address information
     socklen_t sin_size;
     char s[INET6_ADDRSTRLEN];
-
-    Logger log("testing.log");
-    log << Logger::LOG_INFO << "This is really cool!";
-    log << Logger::LOG_ERROR << "This is really cool!";
-    log << Logger::LOG_WARN << "This is really cool!";
-
-    log << Logger::LOG_DEBUG << "This is really cool!";
-    log << Logger::LOG_FATAL << "This is really cool!";
-    log << Logger::LOG_TRACE << "This is really cool!";
-
-    exit(0);
     
     int status = createserver(BACKLOG, PORT, serverSocket);
     if (status < 0) {
