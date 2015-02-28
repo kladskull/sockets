@@ -29,6 +29,9 @@ dist/
 *.a
 *.lib
 
+# logs
+.log
+
 # Executables
 *.exe
 *.out
