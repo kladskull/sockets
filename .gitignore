@@ -1,3 +1,10 @@
+# netbeans build dirs
+build/
+dist/
+
+# mac files
+.DS_Store
+
 # Compiled Object files
 *.slo
 *.lo
