@@ -1,4 +1,8 @@
+# main program
+sockets
+
 # netbeans build dirs
+nbproject/
 build/
 dist/
 

@@ -8,40 +8,63 @@
  */
 
 #include <iostream>
+#include <istream>
+#include <ostream>
 #include <unistd.h>
-#include <arpa/inet.h>
-
-#include "Logger.h"
-#include "sockets.h"
-
-#define PORT "8080"     // the port users will be connecting to
-#define BACKLOG 256     // how many pending connections queue will hold
+#include "signal.h"
+#include "Sockets.h"
 
 using namespace std;
 
+struct sigaction sigAction;
+
+void sigchld_handler(int s) {
+    if (s) {
+        s = 1;
+    }
+    while (waitpid(-1, NULL, WNOHANG) > 0);
+}
+
 int main() {
 
-    int serverSocket, clientSocket; // listen on sock_fd, new connection on new_fd
-    struct sockaddr_storage their_addr; // connector's address information
-    socklen_t sin_size;
-    char s[INET6_ADDRSTRLEN];
+    // create a socket server
+    Sockets socketServer;
+    socketServer.setAddress("localhost");
+    socketServer.setPort(8080);
+    socketServer.setBufferSize(256);
+    socketServer.setBlocking(false);
     
-    int status = createserver(BACKLOG, PORT, serverSocket);
-    if (status < 0) {
-        cerr << "Couldn't create the server.." << endl;
-        exit(1);
+    // open and start listening on the server
+    socketServer.openSocket();
+
+    // client Socket
+    int clientSocket;
+    
+    while (true) {
+        // await a connection
+        clientSocket = socketServer.waitForConnection();
+        
+        // did we get a connection?
+        if (clientSocket > 0) {
+            // we got something...
+            cout << "Client connection: " << socketServer.getClientIp() << endl;
+        } else {
+            // nothing happened/or error on accept
+            if (socketServer.getBlocking() == false) {
+                // don't cook the cpu!
+                usleep(100000); // pause 10th of a second
+            }
+        }
     }
+    
+    // close the server
+    socketServer.closeSocket();
+    
+/*
+    char s[INET6_ADDRSTRLEN];
 
     while (true) {
 
-        // wait for a connection
-        sin_size = sizeof their_addr;
-        
-        clientSocket = accept(serverSocket, reinterpret_cast<sockaddr *>(&their_addr), &sin_size);
-        if (clientSocket == -1) {
-            cerr << "client accept error" << endl;
-            continue;
-        }
 
         // get the ip of the new connection
         inet_ntop(their_addr.ss_family, get_in_addr(reinterpret_cast<sockaddr *>(&their_addr)), s, sizeof s);
@@ -94,6 +117,6 @@ int main() {
         }
         close(clientSocket); // parent doesn't need this
     }
-
+*/
     return 0;
 }
